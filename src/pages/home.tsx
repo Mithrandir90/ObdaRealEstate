@@ -2,7 +2,7 @@ import { useList } from '@pankod/refine-core';
 import { Typography, Box, Stack } from '@pankod/refine-mui';
 import {
   PieChart,
-  PropertyReferral,
+  PropertyReferrals,
   TotalRevenue,
   PropertyCard,
   TopAgent
@@ -43,8 +43,9 @@ const home = () => {
         />
       </Box>
 
-      <Stack mt="25px" width="100%" direction={{ xs: 'column', lg: 'row' }}>
-
+      <Stack mt="25px" width="100%" direction={{ xs: 'column', lg: 'row' }} gap={4}>
+        <TotalRevenue />
+        <PropertyReferrals />
       </Stack>
     </Box>
 
