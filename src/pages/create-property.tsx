@@ -1,12 +1,34 @@
-import React from 'react'
+import { useState } from 'react';
+import { useGetIdentity } from '@pankod/refine-core';
+import { FieldValues, useForm } from '@pankod/refine-react-hook-form';
+import { useNavigate } from '@pankod/refine-react-router-v6';
 
-const createProperties
-  = () => {
-    return (
-      <div>createProperties
+import Form from 'components/common/Form';
 
-      </div>
-    )
-  }
+const CreateProperty = () => {
+  const navigate = useNavigate();
+  const { data: user } = useGetIdentity();
+  const [propertyImage, setPropertyImage] =
+    useState({ name: '', url: '' })
+  const { refineCore: { onFinish, formLoading }, register, handleSubmit } = useForm();
 
-export default createProperties
+  const handleImageChange = () => { };
+  const onFinishHandler = () => { };
+
+  return (
+    <Form
+      type="Create"
+      register={register}
+      onFinish={onFinish}
+      formLoading={formLoading}
+      handleSubmit={handleSubmit}
+      handleImageChange={handleImageChange}
+      onFinishHandler={onFinishHandler}
+      propertyImage={propertyImage}
+
+
+    />
+  )
+}
+
+export default CreateProperty
